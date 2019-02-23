@@ -11,3 +11,4 @@
 /build/*.phar.asc
 /cache.properties
 /vendor
+/.scannerwork
