@@ -1,0 +1,27 @@
+{
+    "name": "volkan/server-planning",
+    "description": "This library calculates the number of servers you need according to the first fit algorithm",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "authors": [
+        {
+            "name": "Volkan Altan",
+            "email": "volkanaltan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ServerCalculator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ServerCalculator\\Tests\\": "tests/"
+        }
+    }
+}
