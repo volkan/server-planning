@@ -21,3 +21,5 @@ docker-compose up
 You can check quality of library from sonarcloud:
 
 https://sonarcloud.io/dashboard?id=volkan_server-planning
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=volkan_server-planning&metric=alert_status)](https://sonarcloud.io/dashboard?id=volkan_server-planning)
