@@ -10,7 +10,7 @@ namespace ServerCalculator;
  * Class VirtualMachine
  * @package ServerCalculator
  */
-class VirtualMachine extends MachineSize
+class VirtualMachine extends MachineSpec
 {
 
 }

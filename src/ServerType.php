@@ -12,7 +12,7 @@ namespace ServerCalculator;
  * Class ServerType
  * @package ServerCalculator
  */
-class ServerType extends MachineSize
+class ServerType extends MachineSpec
 {
 
 }
