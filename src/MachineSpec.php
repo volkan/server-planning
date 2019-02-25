@@ -10,7 +10,7 @@ namespace ServerCalculator;
  * Class MachineSize
  * @package ServerCalculator
  */
-class MachineSpec
+abstract class MachineSpec
 {
     protected $cpu;
     protected $ram;
