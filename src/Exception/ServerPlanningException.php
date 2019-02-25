@@ -6,7 +6,8 @@
 
 namespace ServerPlanning\Exception;
 
-final class MachineSizeException extends ServerPlanningException
+
+class ServerPlanningException extends \Exception
 {
 
 }

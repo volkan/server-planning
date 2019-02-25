@@ -4,9 +4,9 @@
  * Date: 2019-02-23
  */
 
-namespace ServerCalculator;
+namespace ServerPlanning;
 
-use ServerCalculator\Exception\MachineSizeException;
+use ServerPlanning\Exception\MachineSizeException;
 
 
 class ServerCalculator

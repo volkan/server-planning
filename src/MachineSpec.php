@@ -4,11 +4,11 @@
  * Date: 2019-02-23
  */
 
-namespace ServerCalculator;
+namespace ServerPlanning;
 
 /**
- * Class MachineSize
- * @package ServerCalculator
+ * Class MachineSpec
+ * @package ServerPlanning
  */
 abstract class MachineSpec
 {

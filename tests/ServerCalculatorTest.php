@@ -4,13 +4,13 @@
  * Date: 2019-02-23
  */
 
-namespace ServerCalculator\Tests;
+namespace ServerPlanning\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ServerCalculator\Exception\MachineSizeException;
-use ServerCalculator\ServerCalculator;
-use ServerCalculator\ServerType;
-use ServerCalculator\VirtualMachine;
+use ServerPlanning\Exception\MachineSizeException;
+use ServerPlanning\ServerCalculator;
+use ServerPlanning\ServerType;
+use ServerPlanning\VirtualMachine;
 
 /**
  * Class ServerCalculatorTest

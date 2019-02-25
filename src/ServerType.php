@@ -1,16 +1,14 @@
 <?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
  * User: volkan
  * Date: 2019-02-23
- * Time: 16:54
  */
 
-namespace ServerCalculator;
+namespace ServerPlanning;
 
 /**
  * Class ServerType
- * @package ServerCalculator
+ * @package ServerPlanning
  */
 class ServerType extends MachineSpec
 {

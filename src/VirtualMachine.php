@@ -4,11 +4,11 @@
  * Date: 2019-02-23
  */
 
-namespace ServerCalculator;
+namespace ServerPlanning;
 
 /**
  * Class VirtualMachine
- * @package ServerCalculator
+ * @package ServerPlanning
  */
 class VirtualMachine extends MachineSpec
 {

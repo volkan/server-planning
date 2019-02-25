@@ -12,3 +12,5 @@
 /cache.properties
 /vendor
 /.scannerwork
+tests-clover.xml
+tests-junit.xml
