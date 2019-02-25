@@ -18,7 +18,7 @@ use ServerCalculator\VirtualMachine;
  */
 class ServerCalculatorTest extends TestCase
 {
-    public function testItReturnWhenInputOneServerAndMoreThanOneMachines() : void
+    public function testItReturn2WhenInputOneServerAndMoreThanOneMachines() : void
     {
         //
         $server = new ServerType();
@@ -53,6 +53,43 @@ class ServerCalculatorTest extends TestCase
 
         //
         $this->assertSame(2, $result);
+    }
+
+    public function testItReturn3WhenInputOneServerAndMoreThanOneMachines() : void
+    {
+        //
+        $server = new ServerType();
+        $server->setCpu(2);
+        $server->setRam(32);
+        $server->setHdd(100);
+
+        $virtualMachine = new VirtualMachine();
+        $virtualMachine->setCpu(2);
+        $virtualMachine->setRam(32);
+        $virtualMachine->setHdd(100);
+
+        $virtualMachines[] = $virtualMachine;
+
+        $virtualMachine = new VirtualMachine();
+        $virtualMachine->setCpu(1);
+        $virtualMachine->setRam(16);
+        $virtualMachine->setHdd(10);
+
+        $virtualMachines[] = $virtualMachine;
+
+        $virtualMachine = new VirtualMachine();
+        $virtualMachine->setCpu(2);
+        $virtualMachine->setRam(32);
+        $virtualMachine->setHdd(100);
+
+        $virtualMachines[] = $virtualMachine;
+
+        //
+        $virtualMachineCalculator = new ServerCalculator();
+        $result = $virtualMachineCalculator->calculate($server, ...$virtualMachines);
+
+        //
+        $this->assertSame(3, $result);
     }
 
     public function testItReturnExceptionWhenVirtualMachineIsToBig(): void

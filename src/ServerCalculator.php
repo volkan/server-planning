@@ -8,10 +8,7 @@ namespace ServerCalculator;
 
 use ServerCalculator\Exception\MachineSizeException;
 
-/**
- * Class ServerCalculator
- * @package ServerCalculator
- */
+
 class ServerCalculator
 {
     /**
@@ -26,18 +23,33 @@ class ServerCalculator
             throw new MachineSizeException("Must be at least one virtual machine");
         }
 
-        $serverCount = 0;
-        $serverSwapSize = $server->getSize();
-        foreach ($virtualMachines as $machine) {
-            if($machine->getSize() > $server->getSize()) {
+        $serverCount = 1;
+        $machineSize = clone $server;
+        foreach ($virtualMachines as $virtualMachine) {
+            //check virtual machine size
+            if($virtualMachine->getSize() > $server->getSize()
+                || $virtualMachine->getRam() > $server->getRam()
+                || $virtualMachine->getCpu() > $server->getCpu()
+                || $virtualMachine->getHdd() > $server->getHdd()
+            ) {
                 throw new MachineSizeException("Virtual machine size is to big");
             }
-
-            if ($serverSwapSize >= $machine->getSize()) {
+            //if i need server, increase the number of machine
+            if ($machineSize->getRam() < $virtualMachine->getRam()
+                || $machineSize->getCpu() < $virtualMachine->getCpu()
+                || $machineSize->getHdd() < $virtualMachine->getHdd()
+            ) {
+                $machineSize = clone $server;
                 $serverCount++;
-                $serverSwapSize -= $machine->getSize();
-            } else {
-                $serverSwapSize = $server->getSize();
+            }
+
+            if ($machineSize->getRam() >= $virtualMachine->getRam()
+                && $machineSize->getCpu() >= $virtualMachine->getCpu()
+                && $machineSize->getHdd() >= $virtualMachine->getHdd()
+            ) {
+                $machineSize->setRam($machineSize->getRam() - $virtualMachine->getRam());
+                $machineSize->setCpu($machineSize->getCpu() - $virtualMachine->getCpu());
+                $machineSize->setHdd($machineSize->getHdd() - $virtualMachine->getHdd());
             }
         }
 
